@@ -11,10 +11,10 @@ JOIN projects proj ON corr.project_id = proj.id
 WHERE corr.user_id = user_id;
 IF total_weight > 0 THEN
    UPDATE users
-   SET average_score = total_weighted_score / total_weight;
+   SET average_score = total_weighted_score / total_weight
    WHERE id = user_id;
 ELSE
-   UPDATE users                                                                   SET average_score = 0;
+   UPDATE users                                                                   SET average_score = 0
    WHERE id = user_id;
 END IF;
 END $$
